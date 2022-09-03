@@ -194,3 +194,20 @@ header a {
     background-position: center center;
     filter:blur(1px)
 }
+
+footer {
+    width: 100%;
+    background-color: #6EB5FF;
+    text-align: center;
+    padding: 5px;
+}
+
+footer p:nth-child(1) {
+    color: white;
+    margin-bottom: -10px;
+}
+
+footer p:nth-child(2) {
+    font-size: 14px;
+    color: #C7C7C7;
+}
