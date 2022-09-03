@@ -56,24 +56,40 @@ header {
     height: 60px;
     justify-content: space-evenly;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: black;
     box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.5);
     z-index: 98;
 }
 
 #menu-mobile {
     display: none;
+    z-index: 98;
 }
 
 #menu-mobile-dropdown {
     display: none;
+    z-index: 98;
 }
 
-header a {
+#menu-desktop a {
     color: white;
     text-decoration: none;
     font-weight: bold;
     font-size: 25px;
+}
+
+#menu-desktop div {
+    width: 100%;
+    height: 60px;
+    display:  flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 350ms;
+    cursor: pointer;
+}
+
+#menu-desktop div:hover {
+    background-color: #6EB5FF;
 }
 
 #hero {
@@ -130,6 +146,16 @@ header a {
     font-family: hel-light;
 }
 
+#aboutus-text .desc {
+    transition: background-color 350ms;
+}
+
+#aboutus-text:hover .desc {
+    background-color: white;
+}
+
+
+
 #aboutus-text h3 {
     width: 80%;
     font-size: 54px;
@@ -157,10 +183,22 @@ header a {
 #detail-1,
 #detail-2,
 #detail-3 {
-    word-wrap: break-word;
     flex: 1;
     line-height: 30px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    filter: grayscale(1);
+    transition: filter, font-size, color 350ms;
+    font-size: 20px;
+    color: grey;
+    z-index: 5;
+}
+
+#detail-1:hover,
+#detail-2:hover,
+#detail-3:hover {
+    filter: grayscale(0);
+    font-size: 24px;
+    color: white;
 }
 
 #detail-1 .icon,
@@ -240,7 +278,7 @@ footer p:nth-child(2) {
 
     #menu-mobile {
         height: 60px;
-        background-color: rgba(0, 0, 0, 1);
+        background-color: black;
         box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.5);
         display: flex;
         justify-content: center;
@@ -260,7 +298,7 @@ footer p:nth-child(2) {
         position: absolute;
         top: -240px;
         transition: top 350ms;
-        z-index: -1;
+        z-index: 97;
     }
     
     #menu-mobile-dropdown li {
@@ -274,7 +312,12 @@ footer p:nth-child(2) {
         justify-content: center;
         align-items: center;
         background-color: rgba(25, 25, 25, 0.8);
-        
+        transition: background-color 350ms;
+        z-index: 97;
+    }
+
+    #menu-mobile-dropdown li:hover {
+        background-color: #6eb4ffb2;
     }
 
     #hero {
@@ -293,7 +336,8 @@ footer p:nth-child(2) {
     }
 
     #aboutus p {
-        font-size: 18px;
+        font-size: 22px;
+        line-height: 28px;
     }
 
     #aboutus-img {
@@ -313,6 +357,10 @@ footer p:nth-child(2) {
     #detail-2,
     #detail-3 {
         margin-bottom: 10px;
+        filter: grayscale(0);
+        color: white;
+        font-size: 24px;
+        z-index: -1;
     }
 
     .content {
