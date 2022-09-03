@@ -348,6 +348,10 @@ footer p:nth-child(2) {
         width: 100%;
     }
 
+    #aboutus-text:hover .desc {
+        background-color:#6EB5FF;
+    }
+
     #details {
         flex-direction: column;
         margin-bottom: 0;
