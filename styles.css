@@ -45,18 +45,28 @@ body {
     background-color: #C8E0FE;
 }
 
-
 header {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0px;
+}
+
+#menu-desktop {
     display: flex;
-    height: 55px;
+    height: 60px;
     justify-content: space-evenly;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.8);
     box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.5);
-    position: sticky;
-    position: -webkit-sticky;
-    top: 0px;
-    z-index: 99;
+    z-index: 98;
+}
+
+#menu-mobile {
+    display: none;
+}
+
+#menu-mobile-dropdown {
+    display: none;
 }
 
 header a {
@@ -80,6 +90,7 @@ header a {
 #hero #logo {
     width: 75%;
     height: 75%;
+    min-width: 360px;
 }
 
 #aboutus {
@@ -143,14 +154,18 @@ header a {
     margin-bottom: 10px;
 }
 
-#detail-1, #detail-2, #detail-3 {
+#detail-1,
+#detail-2,
+#detail-3 {
     word-wrap: break-word;
     flex: 1;
     line-height: 30px;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
 }
 
-#detail-1 .icon, #detail-2 .icon, #detail-3 .icon {
+#detail-1 .icon,
+#detail-2 .icon,
+#detail-3 .icon {
     width: 100%;
     max-width: 300px;
     height: auto;
@@ -163,10 +178,11 @@ header a {
     width: 100%;
     height: 100%;
     background-image: url(images/100.png);
-    background-size:     cover;                      /* <------ */
-    background-repeat:   no-repeat;
+    background-size: cover;
+    /* <------ */
+    background-repeat: no-repeat;
     background-position: center center;
-    filter:blur(1px)
+    filter: blur(1px)
 }
 
 .content {
@@ -182,20 +198,22 @@ header a {
     width: 100%;
     height: 100%;
     background-image: url(images/101.png);
-    background-size:     cover;                      /* <------ */
-    background-repeat:   no-repeat;
+    background-size: cover;
+    /* <------ */
+    background-repeat: no-repeat;
     background-position: center center;
-    filter:blur(1px)
+    filter: blur(1px)
 }
 
 #bg-3 {
     width: 100%;
     height: 100%;
     background-image: url(images/102.png);
-    background-size:     cover;                      /* <------ */
-    background-repeat:   no-repeat;
+    background-size: cover;
+    /* <------ */
+    background-repeat: no-repeat;
     background-position: center center;
-    filter:blur(1px)
+    filter: blur(1px)
 }
 
 footer {
@@ -215,13 +233,56 @@ footer p:nth-child(2) {
     color: #C7C7C7;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1000px) {
+    #menu-desktop {
+        display: none;
+    }
+
+    #menu-mobile {
+        height: 60px;
+        background-color: rgba(0, 0, 0, 1);
+        box-shadow: 3px 3px 2px rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 98;
+    }
+
+    #menu-mobile img {
+        cursor: pointer;
+    }
+    
+    #menu-mobile-dropdown {
+        display: block;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        position: absolute;
+        top: -240px;
+        transition: top 350ms;
+        z-index: -1;
+    }
+    
+    #menu-mobile-dropdown li {
+        cursor: pointer;
+        height: 60px;
+        list-style: none;
+        color: white;
+        font-weight: bold;
+        font-size: 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(25, 25, 25, 0.8);
+        
+    }
+
     #hero {
         width: 100%;
         height: 300px;
         background-size: cover;
     }
-    
+
     #hero #logo {
         width: 100%;
         height: auto;
@@ -234,11 +295,11 @@ footer p:nth-child(2) {
     #aboutus p {
         font-size: 18px;
     }
-    
+
     #aboutus-img {
         display: none;
     }
-    
+
     #aboutus-text {
         width: 100%;
     }
@@ -247,13 +308,15 @@ footer p:nth-child(2) {
         flex-direction: column;
         margin-bottom: 0;
     }
-    
-    #detail-1, #detail-2, #detail-3 {
+
+    #detail-1,
+    #detail-2,
+    #detail-3 {
         margin-bottom: 10px;
     }
-    
+
     .content {
-        position:static;
+        position: static;
         height: 400px;
         display: flex;
         flex-direction: column;
